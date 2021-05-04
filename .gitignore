@@ -1,0 +1,8 @@
+*.DS_Store
+*.log
+*.ttf
+Proposal/proposal.aux
+Proposal/proposal.fdb_latexmk
+Proposal/proposal.fls
+Proposal/proposal.log
+Proposal/proposal.xdv
