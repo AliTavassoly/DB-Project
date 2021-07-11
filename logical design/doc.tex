@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{xepersian}
+\usepackage{amssymb}
+\usepackage[dash,dot]{dashundergaps}
+\settextfont{XB Niloofar}
+
+
+
+\title{طراحی منطقی}
+\date{}
+\begin{document}
+\maketitle
+\begin{flushleft}
+    
+    \begin{latin}
+        \begin{itemize}
+            \item SKILLS(\underline{SKILL\_NAME},SKILL\_TYPE)
+            \item COMPANY(\underline{COMPANY\_REGISTARY\_ID},ADDR,COMPANY\_NAME, INFO\_FILE\_LOCATION, PHONE\_1,PHONE\_2,PHONE\_3)
+            \item ADVERTISEMENT(\underline{\dashuline{COMPANY\_REGISTARY\_ID}, ADD\_ID}, INFO\_FILE\_LOCATION, EXPERIENCE\_YR,IS\_PART\_TIME, WORK\_HOURS, BEGINNING\_DATE, EXP\_DATE)
+            \item ADV\_REQUIREMENTS(\underline{\dashuline{COMPANY\_REGISTARATION\_ID, ADD\_ID, SKILL\_NAME}}, SKILL\_LEVEL)
+            \item ADV\_RELATIVE\_SKILLS(\underline{\dashuline{COMPANY\_REGISTARY\_ID, ADD\_ID, SKILL\_NAME}})
+            \item USER(\underline{USER\_ID},EMAIL\_ADD,FIRST\_NAME,LAST\_NAME,NATIONAL\_ID)
+            \item CV(\underline{\dashuline{USER\_ID}}, BIRTH\_DATE, GENDER, IS\_MARRIED, INFO\_FILE\_LOCATION, ADDR\_STATE, ADDR\_CITY, ADDR\_AREA)
+            \item CV\_PHONES(\underline{\dashuline{USER\_ID}, PHONE\_NUMBER})
+            \item CV\_PROJ\_LINKS(\underline{\dashuline{USER\_ID}, URL})
+            \item CV\_SKILLS(\underline{\dashuline{USER\_ID, SKILL\_NAME}}, SKILL\_LEVEL)
+            \item CV\_EDU\_HISTORY(\underline{\dashuline{USER\_ID}, CRS\_NAME}, ORG\_NAME, CERTIFATE\_URL, SCORE)
+            \item CV\_WORK\_INFO(\underline{\dashuline{USER\_ID}}, DESIRED\_INCOME, IS\_PART\_TIME, WORK\_HOURS, DESIRED\_JOB\_TITLE, WORK\_EXP\_YR, EMPLOYMENT\_STATUS)
+            \item CV\_WORK\_INFO\_INTRESTS(\underline{\dashuline{USER\_ID, SKILL\_NAME}})
+            \item REQUESTS(\underline{\dashuline{USER\_ID, COMPANY\_REGISTARY\_ID, ADD\_ID}}, STATUS)
+            \item COURSE(\underline{COURSE\_ID}, COURSE\_NAME, BEGINNING\_DATE, FINISHING\_DATE)
+            \item COURSE\_SPONSOR(\underline{\dashuline{COURSE\_ID, COMPANY\_REGISTARATION\_ID}})
+            \item COURSE\_MATERIAL\_PROVIDER(\underline{\dashuline{COURSE\_ID, USER\_ID}}, ACCESS\_LEVEL)
+            \item COURSE\_MATERIAL(\underline{\dashuline{COURSE\_ID}, FILE\_LOCATION}, UPLOAD\_DATE)
+            \item COURSE\_HW(\underline{\dashuline{COURSE\_ID}, HW\_TITLE}, DEADLINE\_DATE, PENALTY\_TIME\_SEG\_HOURS, PENALTY\_VALUE, OPENING\_DATE, CLOSING\_DATE, HW\_DESCRIPTION\_FILE\_LOCATION, FILE\_SIZE\_LIMIT)
+            \item HW\_ACCEPTABLE\_FORMATS(\underline{\dashuline{COURSE\_ID, HW\_TITLE}, FORMAT\_NAME})
+            \item HW\_DELIVERY(\underline{\dashuline{COURSE\_ID, HW\_TITLE, USER\_ID}}, DELIVARY\_DATE, FILE\_LOCATION)
+            \item PROBLEM(\underline{PROBLEM\_ID}, PROBLEM\_TITLE, DESCRIPTION\_FILE\_LOCATION, DIFFICULTY\_LEVEL)
+            \item PROBLEM\_SKILL(\underline{\dashuline{PROBLEM\_ID, SKILL\_NAME}}, DIFFICULTY\_LEVEL)
+            \item CONTEST(\underline{CONTEST\_ID}, CONTEST\_TITLE, DESCRIPTION\_FILE\_LOCATION, BEGINNING\_DATE, ENDING\_DATE, IS\_PUBLIC)
+            \item CONTEST\_PROBLEMS(\underline{\dashuline{CONTEST\_ID, PROBLEM\_ID}}, SCORE)
+            \item CONTEST\_COURSE(\underline{\dashuline{COURSE\_ID, CONTEST\_ID}})
+            \item CONTEST\_SPONSOR(\underline{\dashuline{CONTEST\_ID, COMPANY\_REGISTARATION\_ID}})
+            \item USER\_ACTIVITY\_HISTORY(\underline{\dashuline{USER\_ID}})
+            \item ACTIVITY\_HISTORY\_PROBLEMS(\underline{\dashuline{USER\_ID, PROBLEM\_ID}})
+            \item ACTIVITY\_HISTORY\_CONTEST(\underline{\dashuline{USER\_ID, CONSTEST\_ID}}, SCORE, RANK)
+            \item NOTIFICATION(\underline{NOTIFICATION\_ID}, CREATION\_DATE, TEXT)
+            \item USER\_NOTIFICATION(\underline{\dashuline{NOTIFICATION\_ID}}, USER\_ID)
+            \item NEW\_ADD\_NOTIF(\underline{\dashuline{NOTIFICATION\_ID}}, \dashuline{COMPANY\_REGISTARY\_ID, ADD\_ID})
+            \item REQUEST\_STATUS\_UPDATE(\underline{\dashuline{NOTIFICATION\_ID}}, \dashuline{\dashuline{USER\_ID, COMPANY\_REGISTARY\_ID, ADD\_ID}})
+            \item NEW\_REQUEST\_NOTIF(\underline{\dashuline{NOTIFICATION\_ID}},\dashuline{USER\_ID, COMPANY\_REGISTARY\_ID, ADD\_ID}, \dashuline{COMPANY\_REGISTARATION\_ID})
+        \end{itemize}
+    \end{latin}
+\end{flushleft}
+\end{document}
+
+
