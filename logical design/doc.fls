@@ -1,8 +1,8 @@
-PWD /Users/kasrakhoshjoo/Desktop/DB-Project/untitled folder
+PWD /Users/kasrakhoshjoo/Desktop/DB-Project/logical design
 INPUT /usr/local/texlive/2020/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-var/web2c/xetex/xelatex.fmt
-INPUT /Users/kasrakhoshjoo/Desktop/DB-Project/untitled folder/doc.tex
+INPUT /Users/kasrakhoshjoo/Desktop/DB-Project/logical design/doc.tex
 OUTPUT doc.log
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
