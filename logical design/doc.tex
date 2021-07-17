@@ -9,7 +9,7 @@
 \usepackage{xepersian}
 \usepackage{amssymb}    
 \usepackage[dash,dot]{dashundergaps}
-\settextfont{XB Niloofar}
+\settextfont{XB Niloofar.ttf}
 
 
 
@@ -45,10 +45,12 @@
             \item HW\_DELIVERY(\underline{\dashuline{COURSE\_ID, HW\_TITLE, USER\_ID}}, DELIVARY\_DATE, FILE\_LOCATION)
             \item PROBLEM(\underline{PROBLEM\_ID}, PROBLEM\_TITLE, DESCRIPTION\_FILE\_LOCATION, DIFFICULTY\_LEVEL)
             \item PROBLEM\_SKILL(\underline{\dashuline{PROBLEM\_ID, SKILL\_NAME}}, DIFFICULTY\_LEVEL)
+            \item SUBMISSION(\underline{SUBMISSION\_ID}, \dashuline{PROBLEM\_ID}, \dashuline{USER\_ID}, SUBMISSION\_FILE\_LOCATION, SCORE)
             \item CONTEST(\underline{CONTEST\_ID}, CONTEST\_TITLE, DESCRIPTION\_FILE\_LOCATION, BEGINNING\_DATE, ENDING\_DATE, IS\_PUBLIC)
             \item CONTEST\_PROBLEMS(\underline{\dashuline{CONTEST\_ID, PROBLEM\_ID}}, SCORE)
             \item CONTEST\_COURSE(\underline{\dashuline{COURSE\_ID, CONTEST\_ID}})
             \item CONTEST\_SPONSOR(\underline{\dashuline{CONTEST\_ID, COMPANY\_REGISTRATION\_ID}})
+            \item CONTEST\_PARTICIPANTS(\underline{\dashuline{USER\_ID}, \dashuline{CONTEST\_ID}}, SCORE, RANK)
             \item ACTIVITY\_HISTORY\_PROBLEMS(\underline{\dashuline{USER\_ID, PROBLEM\_ID}})
             \item ACTIVITY\_HISTORY\_CONTEST(\underline{\dashuline{USER\_ID, CONTEST\_ID}}, SCORE, RANK)
             \item NOTIFICATION(\underline{NOTIFICATION\_ID}, CREATION\_DATE, TEXT)
