@@ -1,9 +1,3 @@
-/*
-on insert to advertisment_related_skills insert into new_add_notif
-on insert to HW_Delivary and course.is_public = false , check if user is a participants.
-*/
-
--- DROP TRIGGER QueraEcoPlus.new_adv_notif;
 CREATE TRIGGER QueraEcoPlus.new_adv_notif AFTER INSERT ON QueraEcoPlus.ADV_RELATIVE_SKILLS
 FOR EACH ROW BEGIN
     DECLARE i INT;
