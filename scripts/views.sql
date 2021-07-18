@@ -8,23 +8,37 @@
 
 -- SELECT * FROM QueraEcoPlus.USER WHERE EMAIL_ADD = CONCAT('E', 1, 'd');
 
-CREATE FUNCTION new_user(EMAIL_ADD_IN varchar(15), FIRST_NAME_IN varchar(10), 
-                            LAST_NAME_IN varchar(10), NATIONAL_ID_IN varchar(10))
-RETURNS INT
+/* DELIMITER //
 
+CREATE PROCEDURE create_view()
+BEGIN
+      CREATE VIEW v1 AS SELECT USER_ID, EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID
+        FROM USER;
+END //
+
+DELIMITER ; */
+
+DELIMITER //
+
+CREATE PROCEDURE new_user(EMAIL_ADD_IN varchar(15), FIRST_NAME_IN varchar(10), 
+                            LAST_NAME_IN varchar(10), NATIONAL_ID_IN varchar(10))
 BEGIN
     DECLARE user_id INT;
+    DECLARE view_name varchar(100);
 
     SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES 
-            WHERE TABLE_NAME = 'USER' INTO user_id;
+            WHERE TABLE_SCHEMA = 'QueraEcoPlus'
+            AND TABLE_NAME = 'USER' INTO user_id;
 
-    INSERT INTO QueraEcoPlus.USER (USER_ID, EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID)
-        VALUES  (user_id, EMAIL_ADD_IN, FIRST_NAME_IN, LAST_NAME_IN, NATIONAL_ID_IN);
+    SET view_name = CONCAT('user_', user_id, '_view');
 
-    -- CREATE VIEW CONCAT('user_', user_id, '_view') AS SELECT USER_ID, EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID
-    --    FROM USER;
+    INSERT INTO QueraEcoPlus.USER (EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID)
+        VALUES  (EMAIL_ADD_IN, FIRST_NAME_IN, LAST_NAME_IN, NATIONAL_ID_IN);
+
+    CREATE VIEW @view_name AS SELECT USER.USER_ID, EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID
+        FROM USER;
 END;
 
-new_user('E', 'FN', 'LN', '240');
+CALL new_user('EEDA', 'FDAN', 'LADN', '2400');
 
 -- user's contests
