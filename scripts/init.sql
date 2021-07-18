@@ -37,7 +37,7 @@ FIRST_NAME varchar(10), LAST_NAME varchar(10), NATIONAL_ID varchar(10),
 PRIMARY KEY (USER_ID));
 
 CREATE TABLE QueraEcoPlus.CV(USER_ID INT, BIRTH_DATE DATETIME, GENDER varchar(3), IS_MARRIED BOOLEAN,
-INFO_FILE_LOCATION varchar(100), ADDR_STATE varchar(10), ADDR_CITY varchar(10),ADDR_AREA varchar(10),
+INFO_FILE_LOCATION varchar(100), ADDR_STATE varchar(10), ADDR_CITY varchar(10), ADDR_AREA varchar(10),
 PRIMARY KEY(USER_ID), FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID) 
                                     ON DELETE CASCADE
                                     ON UPDATE CASCADE);

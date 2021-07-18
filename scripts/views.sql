@@ -1,7 +1,10 @@
 DROP PROCEDURE IF EXISTS QueraEcoPlus.new_user;
 
 CREATE PROCEDURE QueraEcoPlus.new_user(EMAIL_ADD_IN varchar(15), FIRST_NAME_IN varchar(10), 
-                            LAST_NAME_IN varchar(20), NATIONAL_ID_IN varchar(10))
+                            LAST_NAME_IN varchar(20), NATIONAL_ID_IN varchar(10),
+                            BIRTH_DATE DATETIME, GENDER varchar(3), IS_MARRIED BOOLEAN,
+                            INFO_FILE_LOCATION varchar(100), 
+                            ADDR_STATE varchar(10), ADDR_CITY varchar(10), ADDR_AREA varchar(10))
 BEGIN
     DECLARE mx INT;
     DECLARE cnt INT;
@@ -20,6 +23,10 @@ BEGIN
 
     INSERT INTO QueraEcoPlus.USER (EMAIL_ADD, FIRST_NAME, LAST_NAME, NATIONAL_ID)
         VALUES  (EMAIL_ADD_IN, FIRST_NAME_IN, LAST_NAME_IN, NATIONAL_ID_IN);
+
+    INSERT INTO QueraEcoPlus.CV
+        VALUES  (mx + 1, BIRTH_DATE, GENDER, IS_MARRIED, INFO_FILE_LOCATION, 
+                    ADDR_STATE, ADDR_CITY, ADDR_AREA);
 
     SET @credential_str = CONCAT('CREATE VIEW QueraEcoPlus.view_credential_', mx + 1, ' AS SELECT * FROM USER WHERE USER.USER_ID = ', mx + 1);
     
@@ -45,4 +52,5 @@ BEGIN
     EXECUTE exectutable;
 END;
 
-CALL QueraEcoPlus.new_user('email_1', 'fn_1', 'ln_1', '1111111');
+CALL QueraEcoPlus.new_user('email_1', 'fn_1', 'ln_1', '1111111', NULL, 'M', FALSE,
+                                '.com', 'tehran', 'shiraz', 'yazd');
